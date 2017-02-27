@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file:///clamzfs/follinge/StudioProjects/Day-tracker/Day-tracker.iml" filepath="/clamzfs/follinge/StudioProjects/Day-tracker/Day-tracker.iml" />
+      <module fileurl="file:///clamzfs/follinge/StudioProjects/Day-tracker/app/app.iml" filepath="/clamzfs/follinge/StudioProjects/Day-tracker/app/app.iml" />
+    </modules>
+  </component>
+</project>
