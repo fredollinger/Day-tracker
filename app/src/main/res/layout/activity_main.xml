@@ -8,6 +8,9 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.fredollinger.day_tracker.MainActivity">
 
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    <TextView
+        android:id="@+id/textViewMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="edited with gui" />
 </RelativeLayout>

@@ -3,12 +3,22 @@ package com.fredollinger.day_tracker;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Button;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+// import java.io.OutputStreamReader;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
+
+import java.io.BufferedReader;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,24 +29,54 @@ public class MainActivity extends AppCompatActivity {
      */
     private GoogleApiClient client;
 
-    Button btn;
+    TextView tvMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        btn = new Button(this);
-        // btn.setOnClickListener(this);
-        updateTime();
         setContentView(R.layout.activity_main);
+        tvMain = (TextView) findViewById(R.id.textViewMain);
+        tvMain.setText("text set from code", TextView.BufferType.NORMAL);
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
+/*
+    private void loadPage() {
+        try {
+            InputStream in = openFileInput("index.html");
+
+            if (in != null) {
+                BufferedReader reader;
+                String str;
+                StringBuffer buf;
+                try (InputStreamReader tmp = new InputStreamReader(in)) {
+                    reader = new BufferedReader(tmp);
+                }
+                buf = new StringBuffer();
+
+                while ((str = reader.readLine()) != null) {
+                    buf.append(str);
+                }
+
+                in.close();
+                btn.setText(buf.toString());
+            }
+        }
+        // catch(java.io.FileNotFoundException e) {
+        catch(Exception e) {
+
+    }
+    } // END loadPage()
+*/
+
+    /*
     private void updateTime() {
         btn.setText(new Date().toString());
 
     }
+    */
 
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.

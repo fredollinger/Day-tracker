@@ -1,0 +1,5 @@
+I had a problem where I didn't think that things were updating, but then I
+realied that the studio was ignoring my widgets that I created unless they were
+part of the project activity.
+
+app/build/intermediates/res/merged/debug/layout/activity_main.xml
