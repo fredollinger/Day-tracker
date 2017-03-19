@@ -4,6 +4,7 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+import java.util.Calendar;
 import android.widget.Button;
 
 import java.io.BufferedReader;
@@ -36,12 +37,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         tvMain = (TextView) findViewById(R.id.textViewMain);
-        tvMain.setText("text set from code", TextView.BufferType.NORMAL);
+        setDate();
+        //tvMain.setText("text set from code", TextView.BufferType.NORMAL);
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
+    private void setDate() {
+        Calendar now = Calendar.getInstance();
+        tvMain.setText(now.toString(), TextView.BufferType.NORMAL);
+    }
 /*
     private void loadPage() {
         try {
