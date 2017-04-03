@@ -31,58 +31,26 @@ public class MainActivity extends AppCompatActivity {
     private GoogleApiClient client;
 
     TextView tvMain;
+    DTDate dtd;
+    String dateFile = "dateFile.txt";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        dtd = new DTDate();
+        dtd.initDateFile(dateFile);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         tvMain = (TextView) findViewById(R.id.textViewMain);
-        setDate();
+        setDaysElapsed();
         //tvMain.setText("text set from code", TextView.BufferType.NORMAL);
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
-    private void setDate() {
-        Calendar now = Calendar.getInstance();
-        tvMain.setText(now.toString(), TextView.BufferType.NORMAL);
+    private void setDaysElapsed() {
+        tvMain.setText(dtd.daysElapsedString(), TextView.BufferType.NORMAL);
     }
-/*
-    private void loadPage() {
-        try {
-            InputStream in = openFileInput("index.html");
-
-            if (in != null) {
-                BufferedReader reader;
-                String str;
-                StringBuffer buf;
-                try (InputStreamReader tmp = new InputStreamReader(in)) {
-                    reader = new BufferedReader(tmp);
-                }
-                buf = new StringBuffer();
-
-                while ((str = reader.readLine()) != null) {
-                    buf.append(str);
-                }
-
-                in.close();
-                btn.setText(buf.toString());
-            }
-        }
-        // catch(java.io.FileNotFoundException e) {
-        catch(Exception e) {
-
-    }
-    } // END loadPage()
-*/
-
-    /*
-    private void updateTime() {
-        btn.setText(new Date().toString());
-
-    }
-    */
 
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
